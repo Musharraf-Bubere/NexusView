@@ -1,4 +1,3 @@
-Gihub Workflow - YAML Github Workflow (github-workflow.json)
 name: Python application
 
 on:
