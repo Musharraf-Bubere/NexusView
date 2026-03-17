@@ -1,8 +1,8 @@
 # 🚀 NexusView
 
-![Python](https://img.shields.io/badge/python-3.8%2B-blue)
-![License](https://img.shields.io/badge/license-Apache-green)
-![PyPI](https://img.shields.io/badge/pypi-nexusview--musharraf-orange)
+[![PyPI version](https://img.shields.io/pypi/v/nexusview-musharraf.svg)](https://pypi.org/project/nexusview-musharraf/)
+[![Python versions](https://img.shields.io/pypi/pyversions/nexusview-musharraf.svg)](https://pypi.org/project/nexusview-musharraf/)
+[![License](https://img.shields.io/github/license/Musharraf-Bubere/NexusView.svg)](https://github.com/Musharraf-Bubere/NexusView/blob/main/LICENSE)
 
 ---
 
