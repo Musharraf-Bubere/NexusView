@@ -2,6 +2,7 @@
 
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue)
 ![License](https://img.shields.io/badge/license-Apache-green)
+![PyPI](https://img.shields.io/badge/pypi-nexusview--musharraf-orange)
 
 ---
 
@@ -11,42 +12,41 @@
 
 It allows you to seamlessly:
 
-- 🌐 Render live websites
+- 🌐 Render live websites  
 - 📺 Embed YouTube videos  
-directly inside your notebook environment.
 
-👉 No need to switch tabs — view everything inside your notebook.
+👉 directly inside your notebook environment without switching tabs.
 
 ---
 
 ## ✨ Features
 
 - 🌐 **Website Rendering**  
-  Render any valid website inside a notebook cell
+  Render any valid website inside Jupyter Notebook
 
 - 📺 **YouTube Integration**  
   Automatically extract and embed YouTube videos from URLs
 
 - ⚙️ **Customizable Display**  
-  Control width, height, and layout
+  Control width and height of embedded content
 
 - 🧠 **Smart Error Handling**  
-  Custom exceptions for invalid inputs
+  Custom exceptions for invalid URLs
 
 - 📝 **Logging System**  
-  Track execution with detailed logs
+  Track execution and debug easily
 
-- ⚡ **Lightweight**  
+- ⚡ **Lightweight & Fast**  
   Built using standard Python libraries
 
 ---
 
 ## 📦 Installation
 
-Install using pip:
+Install from PyPI:
 
 ```bash
-pip install nexusview
+pip install nexusview-musharraf
 ```
 
 ---
@@ -58,7 +58,7 @@ pip install nexusview
 ```python
 from nexusview.youtube import render_youtube_video
 
-render_youtube_video("https://youtu.be/your_video_id")
+render_youtube_video("https://youtu.be/dQw4w9WgXcQ")
 ```
 
 ---
@@ -76,12 +76,31 @@ render_site("https://example.com")
 ## 📁 Project Structure
 
 ```
-nexusview/
+NexusView/
 │
-├── logger.py
-├── custom_exception.py
-├── youtube.py
-├── site.py
+├── .github/workflows/
+│   ├── ci.yml
+│   └── python-publish.yml
+│
+├── src/
+│   └── nexusview/
+│       ├── __init__.py
+│       ├── logger.py
+│       ├── custom_exception.py
+│       ├── youtube.py
+│       └── site.py
+│
+├── tests/
+│   ├── unit/
+│   └── integration/
+│
+├── setup.py
+├── setup.cfg
+├── pyproject.toml
+├── tox.ini
+├── requirements.txt
+├── requirements_dev.txt
+├── README.md
 ```
 
 ---
@@ -106,9 +125,43 @@ tox
 
 This project includes:
 
-- ✅ GitHub Actions
-- ✅ Multi-OS testing
-- ✅ PyPI publishing pipeline
+- ✅ GitHub Actions (CI pipeline)
+- ✅ Multi-OS testing (Linux, Windows)
+- ✅ Multiple Python versions (3.8, 3.9)
+- ✅ Automated PyPI publishing
+
+---
+
+## 🧠 How It Works
+
+### YouTube Rendering
+
+- Extracts video ID using regex  
+- Generates embed URL  
+- Displays using HTML iframe  
+
+---
+
+### Website Rendering
+
+- Validates URL using `urllib`  
+- Checks HTTP response (200 OK)  
+- Displays using Jupyter `IFrame`
+
+---
+
+## ⚠️ Limitations
+
+Some websites may not render due to:
+
+```
+X-Frame-Options security policy
+```
+
+Examples:
+
+- Google ❌  
+- Some secure websites ❌  
 
 ---
 
@@ -130,7 +183,17 @@ This project is licensed under the **Apache License**.
 
 If you like this project:
 
-👉 Star the repository  
-👉 Share with others  
+- ⭐ Star the repository  
+- 🍴 Fork it  
+- 📢 Share with others  
+
+---
+
+## 🚀 Future Improvements
+
+- Add more content renderers (PDF, images, etc.)
+- Add validation utilities
+- Improve UI/UX rendering
+- Add documentation website
 
 ---
